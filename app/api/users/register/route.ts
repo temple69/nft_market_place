@@ -76,8 +76,15 @@ export async function POST(req: Request) {
       { status: 201 }
     );
   } catch (error) {
+    let errorMessage = "Internal Server Error";
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
     return NextResponse.json(
-      { message: "Internal Server Error", details: error.message },
+      {
+        message: errorMessage,
+        details: error instanceof Error ? error.message : error,
+      },
       { status: 500 }
     );
   }

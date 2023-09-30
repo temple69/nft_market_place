@@ -34,7 +34,7 @@ export async function POST(req: Request) {
     // Generate JWT
     const token = jwt.sign(
       { userId: user.id, email: user.email },
-      process.env.JWT_SECRET
+      process.env.JWT_SECRET as string
     );
 
     // Here, you can set the JWT in a cookie or send it back in the response.
@@ -44,8 +44,15 @@ export async function POST(req: Request) {
       { status: 200 }
     );
   } catch (error) {
+    let errorMessage = "Internal Server Error";
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
     return NextResponse.json(
-      { message: "Internal Server Error", details: error.message },
+      {
+        message: errorMessage,
+        details: error instanceof Error ? error.message : error,
+      },
       { status: 500 }
     );
   }
