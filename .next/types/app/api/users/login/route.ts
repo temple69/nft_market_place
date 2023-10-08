@@ -1,8 +1,8 @@
-// File: /Users/script/Desktop/projects/nft_market_place/app/api/nfts/get/route.ts
-import * as entry from '../../../../../../app/api/nfts/get/route.js'
+// File: /Users/script/Desktop/projects/nft_market_place/app/api/users/login/route.ts
+import * as entry from '../../../../../../app/api/users/login/route.js'
 import type { NextRequest } from 'next/server.js'
 
-type TEntry = typeof import('../../../../../../app/api/nfts/get/route.js')
+type TEntry = typeof import('../../../../../../app/api/users/login/route.js')
 
 // Check that the entry is a valid entry
 checkFields<Diff<{

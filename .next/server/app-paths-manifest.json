@@ -1,4 +1,3 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/api/nfts/get/route": "app/api/nfts/get/route.js"
+  "/api/nfts/create/route": "app/api/nfts/create/route.js"
 }
