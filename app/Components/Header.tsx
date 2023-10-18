@@ -9,13 +9,12 @@ const Header = () => {
     { href: "/discover", label: "Discover" },
     { href: "/docs", label: "Docs" },
     { href: "/about", label: "Blog" },
-    ,
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact Us" },
   ];
   console.log(navigation);
   return (
-    <header className="flex justify-between mx-10  pt-4 items-center">
+    <header className="flex justify-between mx-10  pt-4 items-center sticky top-0">
       <article className="flex gap-4 items-center">
         <Image
           src="/images/Logo.png"
@@ -23,7 +22,9 @@ const Header = () => {
           width={43}
           height={40}
         />
-        <h2 className="">Panda NFT</h2>
+        <h2 className="font-semibold text-[0.812rem] md:text-base">
+          Panda NFT
+        </h2>
       </article>
       <ul className="flex gap-10">
         {navigation.map((nav) => (
@@ -43,7 +44,7 @@ const Header = () => {
         <button className="bg-[#1E50FF] rounded-2xl h-10 px-4 hover:bg-transparent hover: border border-[#1E50FF]">
           Register
         </button>
-        <button className="rounded-2xl border border-[#1E50FF] px-4 hover:bg-[#1E50FF] hover:border-none">
+        <button className="rounded-2xl border border-[#1E50FF] px-4 hover:bg-[#1E50FF] hover:border-none transition-all">
           Login
         </button>
       </article>
